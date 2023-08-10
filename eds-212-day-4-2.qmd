@@ -2,6 +2,8 @@
 title: "eds-212-day-4-comp2"
 format: html
 editor: visual
+execute: 
+  warning: FALSE
 ---
 
 ## 
@@ -39,4 +41,23 @@ skim(penguins)
 
 # creating whole grid of visualizations
 ggpairs(penguins)
+```
+
+## Making more exploratory charts in ggplot2
+
+Histogram
+
+```{r}
+ggplot(data = penguins, aes(x = flipper_length_mm)) +
+  geom_histogram(fill = "cornflowerblue", color = "darkgrey") +
+  labs(title = "Flipper Length Histogram", x = "Flipper Length (mm)", y = "Count")
+  theme_light()
+```
+
+```{r}
+ggplot(data = penguins, aes(x = species, y = bill_length_mm)) +
+  geom_boxplot(color = "darkgrey", fill = "pink") +
+  labs(title = "Boxplot of species and bill length", x = "Species", y = "Bill Length (mm)") +
+  geom_jitter(color = "palegreen3", size = 0.75, aes(size = bill_depth_mm, color = bill_depth_mm)) +
+  theme_light()
 ```
