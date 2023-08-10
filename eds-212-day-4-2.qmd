@@ -5,3 +5,38 @@ editor: visual
 ---
 
 ## 
+
+```{r}
+library(GGally)
+library(skimr)
+library(palmerpenguins)
+library(tidyverse)
+```
+
+## Basic data exploration
+
+-   names: get variable names
+
+-   dim: get data dimensions
+
+-   head: get first n lines (6 by default)
+
+-   tail: get last n lines (6 by default)
+
+-   summary: get basic summary statistics
+
+```{r}
+names(penguins)
+
+dim(penguins)
+
+head(penguins)
+
+tail(penguins)
+
+# gives rundown of dataset
+skim(penguins)
+
+# creating whole grid of visualizations
+ggpairs(penguins)
+```
